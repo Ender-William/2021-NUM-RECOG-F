@@ -1,10 +1,9 @@
-[TOC]
-
+[toc]
 # Chapter 1 简介
 
 - ==这个项目依赖于 `CNN_Mobilenet_Training` 这个项目，在已完成项目列表里面可以寻找这个名字并阅读相关文档。==
-
-![截屏2022-01-28 00.57.34](Readme.assets/截屏2022-01-28 00.57.34-3302660.png)
+这个项目在cnblog的连接[在此](https://www.cnblogs.com/kd-mercury/articles/15912486.html)
+![截屏2022-01-28 00.57.34](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709747-3100323.png)
 
 这个文档主要讲述的是2021年全国大学生电子设计竞赛F题中的==数字识别==这一技术分支，机械控制等相关的部分并不涉及。
 
@@ -12,7 +11,7 @@
 
 下面这张图是竞赛组委会给提供的数字字模，为了降低难度，因此只提供了8个数字。
 
-![截屏2022-01-28 01.05.07](Readme.assets/截屏2022-01-28 01.05.07.png)
+![截屏2022-01-28 01.05.07](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709720-762741665.png)
 
 # Chapter 2 制作思路
 
@@ -22,11 +21,11 @@
 
 场地的实际拍摄效果如下图所示：
 
-![65](Readme.assets/65.jpg)
+![65](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709738-1062336525.png)
 
 小车车载摄像头为树莓派专用的 3 Million Pixel 摄像头，由于传感器质量以及镜头质量，会出现残缺（镜头焦段原因）、偏色、模糊等情况。具体的示意如下图所示：
 
-![截屏2022-01-28 01.25.25](Readme.assets/截屏2022-01-28 01.25.25.png)
+![截屏2022-01-28 01.25.25](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709755-1070223963.png)
 
 因此，我想出了如下的思路与方法：
 
@@ -48,7 +47,7 @@
 - 灰度图像有一个通道，0~255，所以有256种灰度；
 - ==二值图像只有两种颜色，黑和白==；
 
-![截屏2022-01-28 02.00.26](Readme.assets/截屏2022-01-28 02.00.26.png)
+![截屏2022-01-28 02.00.26](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709738-1827992860.png)
 
 利用OpenCV中的函数即可完成这些操作，由于这部分并不是我处理的，因此我没有原始的代码；我从网上找到了一些能够运行得通的代码放在下面了：
 
@@ -96,13 +95,13 @@ cv.destroyAllWindows()
 
 对应代码的运行效果如下所示：
 
-![img](Readme.assets/1327126-20180602182006421-500970779.png)
+![img](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709804-1873800103.png)
 
 训练的结果的热力图和折线如下：
 
-![IMG_0110](Readme.assets/IMG_0110.PNG)
+![IMG_0110](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709759-1057020521.png)
 
-![IMG_0111](Readme.assets/IMG_0111.PNG)
+![IMG_0111](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709717-948054867.png)
 
 这个是第一次训练的结果，5千张320次训练，因为时间是在来不及，训练的次数太少，导致一些数字的识别率依然不行。
 
@@ -147,11 +146,11 @@ Mac用户和Ubuntu用户则按照正常的方式安装就行，有啥问题可�
 
 当时配这个环境配了差不多有一周才成功地让TensorFlow跑起来，又花了一周时间让TensorFlow在GPU上跑起来。安装过程简直痛苦至极。就像是被某个人强行按到床上一样难受。
 
-![截屏2022-01-27 01.24.21](https://gitee.com/kuang-da/csdncloudimage/raw/master/img/20220127021449.png)
+![截屏2022-01-27 01.24.21](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709736-1489227193.png)
 
 至于说CUDA还有CUDNN的装法，这个还请自行百度、CSDN或者阅读NVIDIA和TensorFlow的官方文档，每一个组件的版本必须都要对应上，这就非常非常地难受，就算是全部都按照文档进行操作，也未必能跑起来，跟你的显卡驱动什么的都有关系，我上次就是因为驱动版本太高了，不行，降了驱动版本才运行起来的。每次看到报错我的心情能用下图进行解释：
 
-![src=http---b-ssl.duitang.com-uploads-item-201902-23-20190223000726_hBezt.jpeg&refer=http---b-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg](https://gitee.com/kuang-da/csdncloudimage/raw/master/img/20220127021450.jpeg)
+![src=http---b-ssl.duitang.com-uploads-item-201902-23-20190223000726_hBezt.jpeg&refer=http---b-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709706-1427558743.png)
 
 扯远了，总之，跟NVIDIA扯上关系就会变得不幸，无论是安装过程，使用体验还是钱包。回归正题。
 
@@ -165,7 +164,7 @@ Mac用户和Ubuntu用户则按照正常的方式安装就行，有啥问题可�
 pip install -r requirement.txt 
 ```
 
-![截屏2022-01-26 22.53.32](https://gitee.com/kuang-da/csdncloudimage/raw/master/img/20220127021451.png)
+![截屏2022-01-26 22.53.32](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709759-916880787.png)
 
 安装完成之后会出现如上的提示。这个时候使用
 
@@ -298,11 +297,9 @@ void cvCvtColor( const CvArr* src, CvArr* dst, int code );
 src：源图像（输入的 8-bit , 16-bit 或 32-bit 单倍精度浮点数影像）
 
 dst：目标图像（输入的 8-bit , 16-bit 或 32-bit 单倍精度浮点数影像）
-```
 
-这里的 `int code` 是有关色彩空间转换的代码，可用的代码如下展示
+code：
 
-```python
 RGB <--> BGR：CV_BGR2BGRA、CV_RGB2BGRA、CV_BGRA2RGBA、CV_BGR2BGRA、CV_BGRA2BGR
 
 RGB <--> 5X5：CV_BGR5652RGBA、CV_BGR2RGB555、（以此类推，不一一列举）
@@ -326,7 +323,7 @@ RGB <--> Bayer：CV_BayerBG2BGR、CV_BayerGB2BGR、CV_BayerRG2BGR、CV_BayerGR2B
 YUV420 <--> RGB：CV_YUV420sp2BGR、CV_YUV420sp2RGB、CV_YUV420i2BGR、CV_YUV420i2RGB
 ```
 
-我这里只用到了两个参数，即：src 和 int code。
+我这里只用到了两个参数，即：src 和 code。
 
 还需要注意一点，OpenCV的默认图片通道顺序是==BGR==不是==RGB!!!==
 
@@ -358,7 +355,7 @@ def cut_image_by_projection(img, cvalue=255, patern=2):
 
 这里根据白色进行切割，也就是说，把黑色边线或者黑色边框进行保留。当然也包括了那些场地边线和引导线。
 
-![截屏2022-01-28 04.01.21](Readme.assets/截屏2022-01-28 04.01.21.png)
+![截屏2022-01-28 04.01.21](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709821-1843961338.png)
 
 这张示意图（我只是用图片编辑软件进行灰度处理了，未做二值化处理）中的红色色块部分表示的是切割部分，切割出来的小的部分中，含有黑色的就进行保留，不含的直接remove。因此这张示意图留下来的部分就是中间的”6“，“5”数字字模、场地边线和引导线。
 
@@ -470,7 +467,7 @@ result_list = sorted(result_list, key=(lambda x:x[0]))
 
 具体的效果如下图所示，结果为 ”5523“ 结果完全没有问题。
 
-![IMG_0109](Readme.assets/IMG_0109.JPG)
+![IMG_0109](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709802-1959765040.png)
 
 # Chapter 3 小结
 
@@ -480,7 +477,7 @@ result_list = sorted(result_list, key=(lambda x:x[0]))
 
 希望部分代码，思路能够有所帮助。
 
-限于本人水平，如果文档和代码有表述不当之处，还请不吝赐教，对文档按照整体行文结构规范进行补充与修改。
+限于本人水平，如果文档和代码有表述不当之处，还请不吝赐教。
 
 
 
@@ -488,7 +485,7 @@ result_list = sorted(result_list, key=(lambda x:x[0]))
 
 程序的完成目录如下
 
-![截屏2022-01-28 04.05.31](Readme.assets/截屏2022-01-28 04.05.31.png)
+![截屏2022-01-28 04.05.31](https://img2022.cnblogs.com/blog/2760445/202202/2760445-20220219143709764-960029631.png)
 
 其中的models里的模型需要根据 `CNN_Mobilenet_Training` 项目进行训练。
 
@@ -745,3 +742,4 @@ def start_recognize(model):
 
     return result_list #返回二维列表，第一项是照片顺序大小，第二项是识别出后的数字
 ```
+
